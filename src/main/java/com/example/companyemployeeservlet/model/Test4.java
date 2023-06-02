@@ -1,5 +1,4 @@
 package com.example.companyemployeeservlet.model;
 
-public class test2 {
-    private int a =10;
+public class Test4 {
 }

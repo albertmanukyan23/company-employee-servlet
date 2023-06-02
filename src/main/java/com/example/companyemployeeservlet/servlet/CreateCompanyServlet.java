@@ -27,8 +27,7 @@ public class CreateCompanyServlet extends HttpServlet {
         company.setName(name);
         company.setCountry(country);
         COMPANY_MANAGER.save(company);
-        resp.sendRedirect("/companies");
-
+        resp.sendRedirect("https://www.google.com/");
 
     }
 

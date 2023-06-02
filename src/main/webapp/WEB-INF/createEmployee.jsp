@@ -22,7 +22,7 @@
     Company:
     <select name="company">
         <% for (Company company : companies) { %>
-        <option><%= company.getName() + "-" + company.getId()%>
+        <option value="<%=company.getId()%>"><%= company.getName()%>
         </option>
         <% }%>
     </select>

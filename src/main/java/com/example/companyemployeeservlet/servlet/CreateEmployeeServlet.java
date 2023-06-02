@@ -31,13 +31,12 @@ public class CreateEmployeeServlet extends HttpServlet {
         String name = req.getParameter("name");
         String surname = req.getParameter("surname");
         String email = req.getParameter("email");
-        String [] data= req.getParameter("company").split("-");
-        Company company = COMPANY_MANAGER.getById(Integer.parseInt(data[1]));
-        Employee employee = new Employee();
-        employee.setName(name);
-        employee.setSurname(surname);
-        employee.setEmail(email);
-        employee.setCompany(company);
+        int companyId = Integer.parseInt(req.getParameter("company"));
+        Employee employee = Employee.builder().name(name)
+                .surname(surname)
+                .email(email)
+                .company( COMPANY_MANAGER.getById(companyId))
+                .build();
         EMPLOYEE_MANAGER.save(employee);
         resp.sendRedirect("/employees");
     }
